@@ -39,4 +39,12 @@ public class GreetingEndpoint {
         String message = String.format(properties.getMessage(), name);
         return new Greeting(message);
     }
+    @GET
+    @Path("/bye")
+    @Produces("application/json")
+    public Greeting bye(@QueryParam("name") @DefaultValue("World") String name) {
+        String message = String.format(properties.getMessage(), name);
+        return new Greeting(message);
+    }
+     
 }
